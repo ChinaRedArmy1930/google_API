@@ -336,7 +336,6 @@ class socksocket(socket.socket):
 		# We just need the first line to check if the connection
 		# was successful
 		statusline = resp.splitlines()[0].split(bytes(" ",encoding = "utf8"),2)
-		print(statusline)
 		if str(statusline[0], encoding = "utf8") not in ("HTTP/1.0","HTTP/1.1"):
 			self.close()
 			raise GeneralProxyError((1,_generalerrors[1]))
